@@ -3,7 +3,7 @@ FROM ich777/debian-baseimage
 LABEL maintainer="vinid223@gmail.com"
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends lib32gcc1 lib32stdc++6 lib32stdc++6 libgdiplus && \
+	apt-get -y install --no-install-recommends lib32gcc1 lib32stdc++6 lib32stdc++6 && \
 	rm -rf /var/lib/apt/lists/*
 
 ENV DATA_DIR="/serverdata"
