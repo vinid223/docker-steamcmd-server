@@ -18,8 +18,6 @@ deploy_tag:
   stage: deploy
   variables:
       GIT_STRATEGY: none
-  only:
-    - tags
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
@@ -33,8 +31,6 @@ deploy_latest:
   stage: deploy
   variables:
       GIT_STRATEGY: none
-  only:
-    - tags
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
